@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 
 @Api(description = "阿里云文件管理")
-@CrossOrigin(origins = {"http://localhost:5173/"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:3000/"}, allowCredentials = "true")
 @RestController
 @RequestMapping("/fileOss")
 public class OssController {
