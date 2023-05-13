@@ -24,3 +24,6 @@
 9. Swagger + Knife4j 接口文档
 10. Gson：JSON 序列化库
 11. 相似度匹配算法
+
+### knife4j 接口文档
+![image](https://github.com/kongshier/Partner-Backend/assets/94662685/195ef021-b642-488d-af62-d3203236ffcb)
