@@ -10,8 +10,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 
-@Api(description = "阿里云文件管理")
-@CrossOrigin(origins = {"http://localhost:3000/"}, allowCredentials = "true")
+/**
+ * @author Shier
+ */
+@Api(tags = "阿里云文件管理")
+@CrossOrigin(origins = {"http://partner.kongshier.top"}, allowCredentials = "true")
 @RestController
 @RequestMapping("/fileOss")
 public class OssController {
@@ -19,7 +22,12 @@ public class OssController {
     @Resource
     private OssService ossService;
 
-    //上传头像
+    /**
+     * 上传头像
+     *
+     * @param file
+     * @return
+     */
     @ApiOperation(value = "文件上传")
     @PostMapping("/upload")
     public BaseResponse<String> uploadOssFile(@RequestParam(required = false) MultipartFile file) {

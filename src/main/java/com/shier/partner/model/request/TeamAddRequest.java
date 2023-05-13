@@ -19,8 +19,12 @@ public class TeamAddRequest implements Serializable {
     /**
      * 描述
      */
-
     private String description;
+
+    /**
+     * 队伍头像
+     */
+    private String avatarUrl;
 
     /**
      * 最大人数

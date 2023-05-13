@@ -11,6 +11,8 @@ import com.shier.partner.model.domain.User;
 import com.shier.partner.model.request.UserLoginRequest;
 import com.shier.partner.model.request.UserRegisterRequest;
 import com.shier.partner.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -30,7 +32,8 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:3000/", allowCredentials = "true")
+@Api(tags = "用户管理")
+@CrossOrigin(origins = {"http://partner.kongshier.top/"}, allowCredentials = "true")
 @Slf4j
 public class UserController {
 
@@ -41,6 +44,7 @@ public class UserController {
     private RedisTemplate redisTemplate;
 
 
+    @ApiOperation(value = "用户注册")
     @PostMapping("/register")
     public BaseResponse<Long> userRegister(@RequestBody UserRegisterRequest userRegisterRequest) {
         if (userRegisterRequest == null) {
@@ -58,6 +62,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
+    @ApiOperation(value = "用户登录")
     public BaseResponse<User> userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
         if (userLoginRequest == null) {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR);
@@ -76,6 +81,7 @@ public class UserController {
      *
      * */
     @PostMapping("/logout")
+    @ApiOperation(value = "用户注销")
     public BaseResponse<Integer> userLogout(HttpServletRequest request) {
         if (request == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
@@ -90,6 +96,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/current")
+    @ApiOperation(value = "获取当前用户信息")
     public BaseResponse<User> getCurrentUser(HttpServletRequest request) {
         Object userObj = request.getSession().getAttribute(UserConstant.USER_LOGIN_STATE);
         User currentUser = (User) userObj;
@@ -110,6 +117,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/search")
+    @ApiOperation(value = "搜索用户")
     public BaseResponse<List<User>> searchUsers(String username, HttpServletRequest request) {
         if (!userService.isAdmin(request)) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
@@ -130,6 +138,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/delete")
+    @ApiOperation(value = "删除用户")
     public BaseResponse<Boolean> deleteUser(@RequestBody long id, HttpServletRequest request) {
         if (!userService.isAdmin(request)) {
             throw new BusinessException(ErrorCode.NO_AUTH);
@@ -148,6 +157,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/search/tags")
+    @ApiOperation(value = "根据标签搜索用户")
     public BaseResponse<List<User>> searchUsersByTags(@RequestParam(required = false) List<String> tagNameList) {
         if (CollectionUtils.isEmpty(tagNameList)) {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR);
@@ -163,6 +173,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/update")
+    @ApiOperation(value = "更新用户信息")
     public BaseResponse<Integer> updateUser(@RequestBody User user, HttpServletRequest request) {
         // 1. 校验参数是否为空
         if (user == null) {
@@ -179,6 +190,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/recommend")
+    @ApiOperation(value = "推荐用户")
     public BaseResponse<Page<User>> recommendUsers(long pageSize, long pageNum, HttpServletRequest request) {
         // 获取到当前的用户
         User loginUser = userService.getLoginUser(request);
@@ -212,6 +224,7 @@ public class UserController {
      * @return
      */
     @GetMapping("/match")
+    @ApiOperation(value = "匹配用户")
     public BaseResponse<List<User>> matchUsers(long num, HttpServletRequest request) {
         if (num <= 0 || num > 20) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);

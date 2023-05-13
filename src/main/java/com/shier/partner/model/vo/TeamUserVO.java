@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 队伍和用户信息封装类（脱敏）
@@ -65,10 +66,19 @@ public class TeamUserVO implements Serializable {
     private UserVO createUser;
 
     /**
+     * 头像
+     */
+    private String avatarUrl;
+
+    /**
      * 已加入的用户数
      */
-    private Integer hasJoinNum;
+    private Integer hasJoinNum = 0;
 
+    /**
+     * 已加入用户列表
+     */
+    private List<UserVO> joinUserList;
     /**
      * 判断是否加入队伍
      */

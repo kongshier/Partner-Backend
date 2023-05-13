@@ -20,7 +20,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 @Configuration
 @EnableSwagger2WebMvc
-@Profile({"dev", "test"})   //版本控制访问
+//版本控制访问
+@Profile({"dev", "test"})
 public class Knife4jConfig {
     @Bean(value = "defaultApi2")
     public Docket defaultApi2() {
@@ -32,18 +33,26 @@ public class Knife4jConfig {
                 .paths(PathSelectors.any())
                 .build();
     }
+
     /**
      * api 信息
+     *
      * @return
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("伙伴匹配系统接口文档") // 接口文档的标题
-                .description("伙伴匹配系统用户、队伍的接口信息") // 接口文档的描述信息
-                .termsOfServiceUrl("https://github.com/kongshier") // 提供服务的是谁？可以填写你自己的地址因为是你自己提供的服务
+                // 接口文档的标题
+                .title("伙伴匹配系统接口文档")
+                // 接口文档的描述信息
+                .description("伙伴匹配系统用户、队伍的接口信息")
+                // 提供服务的是谁？可以填写你自己的地址因为是你自己提供的服务
+                .termsOfServiceUrl("https://github.com/kongshier")
+                // 信息
                 .contact(new Contact("shier", "https://blog.csdn.net/qq_56098191", "2927527234@qq.com"))
-                .version("1.0") // 版本
-                .build(); // 构建
+                // 版本
+                .version("1.0")
+                // 构建
+                .build();
     }
 }
 

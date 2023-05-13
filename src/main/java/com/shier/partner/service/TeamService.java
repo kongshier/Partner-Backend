@@ -66,5 +66,13 @@ public interface TeamService extends IService<Team> {
      */
     boolean deleteTeam(long id, User loginUser);
 
+    /**
+     * 通过id队伍
+     *
+     * @param id
+     * @return
+     */
+    TeamUserVO getTeamById(long id, boolean isAdmin, User loginUser);
 
+    List<Team> getTeamByUserId(Long userId);
 }

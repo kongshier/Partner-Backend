@@ -52,6 +52,4 @@ public class TeamQuery extends PageRequest {
      * 搜索关键词
      */
     private String searchText;
-
-
 }

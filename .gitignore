@@ -18,10 +18,9 @@ target/
 *.iws
 *.iml
 *.ipr
-partner-backend.iml
+application-prod.yml
 # mvnw
 # mvnw.md
-#.gitignore
 
 ### NetBeans ###
 /nbproject/private/
