@@ -4,14 +4,14 @@ server:
     context-path: /api
     session:
       cookie:
-        domain: partner.kongshier.top
+        domain: xxxx
         same-site: lax
         secure: false
 spring:
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://8.134.37.7:3306/partner?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://xxxxx/partner?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
     password: shier
   # session 失效时间 30 天
@@ -27,7 +27,7 @@ spring:
 aliyun:
   oss:
     file:
-      endpoint: oss-cn-beijing.aliyuncs.com
-      keyid: LTAI5tDqVTD4RNi5n6NiGjFH
-      keysecret: aGzwOa5gQ942Z5ZXcU1BjmdoPxyU0N
-      bucketname: shierpartner
+      endpoint: xxxxx
+      keyid: xxxxx
+      keysecret: xxxxx
+      bucketname: xxxx
