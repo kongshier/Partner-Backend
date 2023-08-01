@@ -40,7 +40,9 @@
 
 ### 网站首页
 ![MWKL( Q3(9F7 GH AD21}JY](https://github.com/kongshier/Partner-Backend/assets/94662685/42f743dd-2432-414c-89e9-7b60830622f4)
-首页的联系我界面
+
+#### 首页的联系我界面
+
 ![DU)9Y3)3%XQY5GHS~QL4SQH](https://github.com/kongshier/Partner-Backend/assets/94662685/8dde7004-b50c-4e38-a75b-764192a9c6c0)
 
 
@@ -53,7 +55,7 @@
 ### 个人信息界面
 ![6J1SRSG9T648CKVMHN5KPWT](https://github.com/kongshier/Partner-Backend/assets/94662685/b86164c4-418e-47ae-8332-9363727d6bdc)
 
-个人信息维护
+#### 个人信息维护
 ![77(OLSPAM~EON30G)5HX~X1](https://github.com/kongshier/Partner-Backend/assets/94662685/8810db4b-2559-4c2e-9959-4da22e735d2d)
 
 ### 按照标签进行搜索
@@ -62,7 +64,7 @@
 ### 队伍界面
 ![B83G7 MLFQ1F6GW~69JHR7Y](https://github.com/kongshier/Partner-Backend/assets/94662685/55be06fc-8019-4c63-ba6e-730220d44bcc)
 
-创建队伍界面
+#### 创建队伍界面
 ![Y9LJ2IH$PND7(`$WXGDU6Y](https://github.com/kongshier/Partner-Backend/assets/94662685/28713f06-e943-4b94-8aae-115eeaad4b6f)
 
 
